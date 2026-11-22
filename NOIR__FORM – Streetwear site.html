@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NOIR//FORM – Streetwear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E4E1DA; --paper2:#D8D4CB; --ink:#0E0E0E; --grey:#8A877F; --line:rgba(14,14,14,.25);
+  --bg:var(--paper); --fg:var(--ink); --bg2:var(--paper2);
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0E0E0E;--fg:#E4E1DA;--bg2:#181818;--line:rgba(228,225,218,.25);color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0E0E0E;--fg:#E4E1DA;--bg2:#181818;--line:rgba(228,225,218,.25);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%;scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--fg);font:400 1rem/1.6 Archivo,Helvetica,Arial,sans-serif;font-stretch:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:20}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.12;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+a{color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.wide{font-stretch:125%}
+.t{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;line-height:1.9}
+.rule{display:block;width:44px;border-top:1px solid currentColor;margin:18px 0}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 28px}
+.logo{font-stretch:125%;font-weight:700;text-decoration:none;font-size:1.1rem;letter-spacing:-.01em}
+.logo sup{font-size:.5em;font-weight:400}
+nav{display:flex;gap:28px;align-items:center}
+nav a,nav button{font:inherit;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;text-decoration:none;background:none;border:0;color:inherit;cursor:pointer;padding:0}
+nav a:hover,nav button:hover{opacity:.6}
+
+.hero{display:grid;grid-template-columns:1.15fr .85fr;min-height:calc(100svh - 60px)}
+.hl{position:relative;padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between;gap:56px;background:#E4E1DA;color:#0E0E0E;border-right:1px solid var(--line)}
+.hl h1{margin:0;font-stretch:125%;font-weight:700;font-size:clamp(2.1rem,5.4vw,5rem);line-height:1;letter-spacing:-.03em}
+.hl h1 sup{font-size:.22em;font-weight:400;vertical-align:top}
+.hl .sub{margin-top:18px}
+.hl .btn{margin-top:34px}
+.btn{display:inline-block;background:#0E0E0E;color:#E4E1DA;padding:15px 30px;text-decoration:none;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;border:1px solid #0E0E0E;cursor:pointer;font-family:inherit}
+.btn:hover{background:transparent;color:#0E0E0E}
+.btn.sm{padding:12px 20px;width:100%;background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn.sm:hover{background:transparent;color:var(--fg)}
+.hr{position:relative;background:#0E0E0E;color:#E4E1DA;display:flex;align-items:center;justify-content:center;padding:40px;overflow:hidden}
+.hr .corner{position:absolute;top:28px;right:28px;text-align:left;color:#E4E1DA}
+.hr svg{width:100%;max-width:440px}
+.hr .foot{position:absolute;bottom:28px;left:28px}
+.plus{position:absolute;font-weight:300;font-size:1.6rem;line-height:1;opacity:.7}
+.estd{display:flex;gap:44px;align-items:flex-end;flex-wrap:wrap}
+
+section{padding:88px 28px}
+.sec{max-width:1200px;margin:0 auto}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:40px;border-bottom:1px solid var(--line);padding-bottom:20px}
+.head h2{margin:0;font-stretch:125%;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.6rem);letter-spacing:-.02em;line-height:1.05}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--bg);padding:20px 20px 24px;display:flex;flex-direction:column}
+.card .pic{background:var(--bg2);aspect-ratio:1;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.card .pic svg{width:92%}
+.card h3{margin:0;font-stretch:112%;font-weight:600;font-size:1.05rem}
+.card .meta{display:flex;justify-content:space-between;color:var(--grey);margin:2px 0 14px}
+.sizes{display:flex;gap:6px;margin-bottom:14px}
+.sz{flex:1;padding:9px 0;background:transparent;color:var(--fg);border:1px solid var(--line);font:inherit;font-size:.78rem;cursor:pointer}
+.sz[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.card .btn{margin-top:auto}
+
+.manifesto{background:#0E0E0E;color:#E4E1DA;padding:110px 28px}
+.manifesto .sec{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end}
+.manifesto h2{margin:0;font-stretch:125%;font-weight:700;font-size:clamp(2rem,5vw,4.2rem);line-height:1.02;letter-spacing:-.03em}
+.manifesto p{margin:0 0 14px;color:#B8B4AA;max-width:34em}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:0}
+.pillars div{background:var(--bg);padding:26px 22px}
+.pillars h3{margin:0 0 6px;font-stretch:112%;font-weight:600;font-size:1rem}
+.pillars p{margin:0;color:var(--grey);font-size:.92rem}
+
+footer{border-top:1px solid var(--line);padding:40px 28px 44px}
+footer .sec{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+footer .globe{width:84px;height:84px}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);transform:translate(-50%,24px);background:#0E0E0E;color:#E4E1DA;padding:14px 22px;opacity:0;pointer-events:none;transition:.25s;z-index:40;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;border:1px solid #E4E1DA;max-width:calc(100vw - 32px)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.pillars{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr}.hl{padding:32px 22px;border-right:0;gap:40px}.hr{min-height:420px}
+  nav a{display:none}.bar{padding:0 20px}section{padding:60px 20px}.manifesto{padding:72px 20px}
+  .manifesto .sec{grid-template-columns:1fr;gap:28px}footer{padding:32px 20px}
+}
+@media (max-width:480px){.grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toast{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="mw"><feTurbulence type="fractalNoise" baseFrequency=".012 .03" numOctaves="4" seed="7"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -.9"/></filter>
+  <filter id="mk"><feTurbulence type="fractalNoise" baseFrequency=".012 .03" numOctaves="4" seed="7"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  2.6 0 0 0 -.9"/></filter>
+</svg>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="#top">NOIR//FORM<sup>®</sup></a>
+    <nav aria-label="Main">
+      <a href="#drop">Shop</a>
+      <a href="#manifesto">Manifesto</a>
+      <a href="#info">Info</a>
+      <button id="bagBtn" type="button" aria-label="Bag, 0 items">Bag (<span id="bagN">0</span>)</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="hl">
+      <div class="t">Clothing<br>Ideas<br>People<br>Movement<span class="rule"></span></div>
+      <div>
+        <h1>NOIR//FORM<sup>®</sup></h1>
+        <div class="t sub">Streetwear built on minimalism, movement and everyday expression</div>
+        <a class="btn" href="#drop">Shop drop 001</a>
+      </div>
+      <div class="estd t"><span>Estd<br>2025</span><span style="font-size:1.4rem;font-weight:300">/</span><span>Design<br>Clothing<br>Culture</span></div>
+    </div>
+    <div class="hr">
+      <div class="corner t">More<br>than just<br>clothing<span class="rule"></span></div>
+      <span class="plus" style="top:34%;left:12%">+</span><span class="plus" style="bottom:22%;right:14%">+</span><span class="plus" style="top:16%;left:48%">+</span>
+      <div id="heroTee" style="width:100%;max-width:440px"></div>
+      <div class="foot t">For<br>a clearer<br>tomorrow</div>
+    </div>
+  </div>
+
+  <section id="drop">
+    <div class="sec">
+      <div class="head"><h2>Drop 001</h2><span class="t">Four tees. Heavyweight cotton. Made in India.</span></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <div class="manifesto" id="manifesto">
+    <div class="sec">
+      <h2>More than just clothing.</h2>
+      <div>
+        <p>NOIR//FORM is a disciplined approach to everyday wear. Concrete, shadow and stone are our references; black, bone and ash are our palette.</p>
+        <p>We make a few things, make them well and let them wear in. No seasons, no noise.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="info">
+    <div class="sec">
+      <div class="pillars">
+        <div><h3>240 GSM cotton</h3><p>Heavyweight, brushed on the inside, boxy through the body.</p></div>
+        <div><h3>Printed in small runs</h3><p>Every graphic is screen printed by hand and numbered.</p></div>
+        <div><h3>Free shipping over ₹2,999</h3><p>Dispatched in 2 working days across India.</p></div>
+        <div><h3>14-day exchanges</h3><p>Wrong size? Swap it, no questions asked.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="sec">
+    <div class="t">NOIR//FORM®<br>Estd 2025 / India<br>Design, clothing, culture<span class="rule"></span>© 2026. Demo site.</div>
+    <svg class="globe" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="50" cy="50" r="44"/><ellipse cx="50" cy="50" rx="18" ry="44"/><ellipse cx="50" cy="50" rx="34" ry="44"/><path d="M6 50h88M14 28h72M14 72h72"/></svg>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+var P=[
+ {n:"Fracture Tee",c:"Black",p:1899,fill:"#161616",bg:"#0A0A0A",ink:"mw",txt:"#8A877F",off:0},
+ {n:"Orbit Tee",c:"Bone",p:1899,fill:"#ECE8DF",bg:"#ECE8DF",ink:"mk",txt:"#5B5850",off:40},
+ {n:"Monolith Tee",c:"Ash",p:1999,fill:"#8F8C85",bg:"#8F8C85",ink:"mk",txt:"#2B2A27",off:90},
+ {n:"Overcast Tee",c:"Charcoal",p:1999,fill:"#363636",bg:"#1C1C1C",ink:"mw",txt:"#9A978F",off:140}
+];
+function tee(p){
+  return '<svg viewBox="0 0 300 300" role="img" aria-label="'+p.n+' in '+p.c.toLowerCase()+'">'+
+  '<path d="M95 30 60 45 10 95l35 30 25-20v175h160V105l25 20 35-30-50-50-35-15Q150 70 95 30Z" fill="'+p.fill+'" stroke="rgba(0,0,0,.35)" stroke-width="1.5"/>'+
+  '<path d="M105 30Q150 74 195 30" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="2"/>'+
+  '<svg x="108" y="92" width="84" height="128"><rect width="100%" height="100%" fill="'+p.bg+'"/><rect x="-'+p.off+'" y="0" width="300" height="100%" filter="url(#'+p.ink+')"/></svg>'+
+  '<text x="150" y="238" text-anchor="middle" font-size="7" letter-spacing="2.4" fill="'+p.txt+'" font-family="Archivo,Helvetica,Arial,sans-serif">NOIR//FORM</text></svg>';
+}
+document.getElementById("heroTee").innerHTML=tee({n:"Fracture Tee",c:"Black",fill:"#1A1A1A",bg:"#0A0A0A",ink:"mw",txt:"#8A877F",off:0});
+var bag=0,sel={},tm;
+function inr(n){return "₹"+n.toLocaleString("en-IN")}
+var g=document.getElementById("grid");
+g.innerHTML=P.map(function(p,i){
+  return '<article class="card"><div class="pic">'+tee(p)+'</div><h3>'+p.n+'</h3><div class="meta t"><span>'+p.c+'</span><span>'+inr(p.p)+'</span></div>'+
+  '<div class="sizes" role="group" aria-label="Size for '+p.n+'">'+["S","M","L","XL"].map(function(s){return '<button type="button" class="sz" aria-pressed="false" data-i="'+i+'" data-s="'+s+'">'+s+'</button>'}).join("")+'</div>'+
+  '<button type="button" class="btn sm" data-add="'+i+'">Add to bag</button></article>';
+}).join("");
+function toast(m){var t=document.getElementById("toast");t.textContent=m;t.classList.add("on");clearTimeout(tm);tm=setTimeout(function(){t.classList.remove("on")},2200)}
+g.addEventListener("click",function(e){
+  var s=e.target.closest(".sz"),a=e.target.closest("[data-add]");
+  if(s){
+    sel[s.dataset.i]=s.dataset.s;
+    s.parentNode.querySelectorAll(".sz").forEach(function(b){b.setAttribute("aria-pressed",b===s)});
+  }
+  if(a){
+    var i=a.dataset.add;
+    if(!sel[i]){toast("Choose a size first");return}
+    bag++;
+    document.getElementById("bagN").textContent=bag;
+    document.getElementById("bagBtn").setAttribute("aria-label","Bag, "+bag+" items");
+    toast("Added "+P[i].n+", size "+sel[i]);
+  }
+});
+</script>
+</body>
+</html>
